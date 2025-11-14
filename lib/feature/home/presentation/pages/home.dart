@@ -1,4 +1,5 @@
 import 'package:ecommerce_website/core/utils/constants/app_size.dart';
+import 'package:ecommerce_website/feature/home/presentation/widgets/banner_section.dart';
 import 'package:ecommerce_website/feature/home/presentation/widgets/feature_section.dart';
 import 'package:ecommerce_website/feature/home/presentation/widgets/headers.dart';
 import 'package:ecommerce_website/feature/home/presentation/widgets/hero.dart';
@@ -32,7 +33,20 @@ class HomeScreen extends StatelessWidget {
                   SizedBox(height: AppSize.spaceBtwSections * 2),
 
                   // products
-                  ProductSection(),
+                  ProductSection(
+                    title: "Feature Products",
+                    subtitle: "Summer Collection New Modern Design",
+                  ),
+                  SizedBox(height: AppSize.spaceBtwSections * 3),
+
+                  // banner
+                  BannerSection(),
+                  SizedBox(height: AppSize.spaceBtwSections * 3),
+                  //new arrivals
+                  ProductSection(
+                    title: "New Arrivals",
+                    subtitle: "Summer Collection New Modern Design",
+                  ),
 
                   SizedBox(height: 200),
                 ],

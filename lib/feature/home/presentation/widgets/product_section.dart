@@ -4,7 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:ecommerce_website/core/utils/constants/app_size.dart';
 
 class ProductSection extends StatelessWidget {
-  const ProductSection({super.key});
+  final String title;
+  final String subtitle;
+  const ProductSection({
+    super.key,
+    required this.title,
+    required this.subtitle,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +18,7 @@ class ProductSection extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 80),
       child: Column(
         children: [
-          ProductHeadline(),
+          ProductHeadline(title: title, subtitle: subtitle),
           SizedBox(height: AppSize.spaceBtwSections * 2),
           ProductGridView(),
         ],

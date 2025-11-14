@@ -39,13 +39,13 @@ class Header extends StatelessWidget {
                   navBarItems.length,
                   (index) => Padding(
                     padding: EdgeInsets.only(
-                      left: index == 0 ? 0 : AppSize.defaultSpace,
+                      left: index == 0 ? 0 : AppSize.spaceBtwSections,
                     ),
                     child: NavBarItem(title: navBarItems[index], onTap: () {}),
                   ),
                 ),
               ),
-              const SizedBox(width: AppSize.spaceBtwSections),
+              const SizedBox(width: AppSize.spaceBtwSections * 2),
               Icon(Iconsax.shopping_cart_copy),
             ],
           ),
