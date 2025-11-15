@@ -45,4 +45,20 @@ class AppConstants {
     AppImage.product7,
     AppImage.product8,
   ];
+
+  static final List<String> footerCenterLeft = [
+    'About Us',
+    'Delivery Information',
+    'Privacy Policy',
+    'Terms & Conditions',
+    'Contact Us',
+  ];
+
+  static final List<String> footerCenterRight = [
+    'Sign in',
+    'View Cart',
+    'Wishlist',
+    'Blog',
+    'Help',
+  ];
 }

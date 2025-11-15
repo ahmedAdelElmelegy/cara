@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ColorManager {
-  // App theme colors
+  ColorManager._();
   static const Color headerBg = Color(0xffE3E6F3);
   static const Color primary = Color(0xFF4b68ff);
   static const Color secondary = Color(0xFFFFE24B);

@@ -24,7 +24,7 @@ class AppImage {
   static final String people2 = 'assets/img/people/2.png';
   static final String people3 = 'assets/img/people/3.png';
   static final String applePay = 'assets/img/pay/apple.jpg';
-  static final String visaPay = 'assets/img/pay/visa.jpg';
+  static final String visaPay = 'assets/img/pay/visa.png';
   static final String playPay = 'assets/img/pay/play.jpg';
   static final String feature1 = 'assets/img/features/f1.png';
   static final String feature2 = 'assets/img/features/f2.png';
@@ -46,7 +46,7 @@ class AppImage {
   static final String banner5 = 'assets/img/banner/b5.jpg';
   static final String banner7 = 'assets/img/banner/b7.jpg';
   static final String banner10 = 'assets/img/banner/b10.jpg';
-  static final String banner14 = 'assets/img/banner/b14.jpg';
+  static final String banner14 = 'assets/img/banner/b14.png';
   static final String banner16 = 'assets/img/banner/b16.jpg';
   static final String banner17 = 'assets/img/banner/b17.jpg';
   static final String banner18 = 'assets/img/banner/b18.jpg';
