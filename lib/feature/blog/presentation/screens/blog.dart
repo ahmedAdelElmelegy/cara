@@ -1,3 +1,7 @@
+import 'package:ecommerce_website/core/widget/layout/template/side_template.dart';
+import 'package:ecommerce_website/feature/blog/presentation/screens/responsive/blog_desktop_screen.dart';
+import 'package:ecommerce_website/feature/blog/presentation/screens/responsive/blog_mobile_screen.dart';
+import 'package:ecommerce_website/feature/blog/presentation/screens/responsive/blog_tablet_screen.dart';
 import 'package:flutter/material.dart';
 
 class BlogScreen extends StatelessWidget {
@@ -5,6 +9,10 @@ class BlogScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(body: Center(child: Text("Blog")));
+    return AppSiteTemplate(
+      mobile: const BlogMobileScreen(),
+      tablet: const BlogTabletScreen(),
+      desktop: const BlogDesktopScreen(),
+    );
   }
 }

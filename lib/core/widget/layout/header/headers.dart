@@ -42,19 +42,19 @@ class _HeaderState extends State<Header> {
 
     setState(() {
       switch (first) {
-        case Routes.home:
+        case 'home':
           currentIndex = 0;
           break;
-        case Routes.shop:
+        case 'shop':
           currentIndex = 1;
           break;
-        case Routes.blog:
+        case 'blog':
           currentIndex = 2;
           break;
-        case Routes.about:
+        case 'about':
           currentIndex = 3;
           break;
-        case Routes.contact:
+        case 'contact':
           currentIndex = 4;
           break;
         default:
@@ -122,9 +122,9 @@ class _HeaderState extends State<Header> {
                       child: NavBarItem(
                         title: navBarItems[index],
                         onTap: () {
-                          setState(() {
-                            currentIndex = index;
-                          });
+                          // setState(() {
+                          //   currentIndex = index;
+                          // });
                           _router.go(routes[index]);
                         },
                         isActive: index == currentIndex,
