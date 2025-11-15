@@ -1,6 +1,7 @@
+import 'package:ecommerce_website/core/utils/constants/app_size.dart';
 import 'package:ecommerce_website/core/widget/layout/drawer/drawer.dart';
+import 'package:ecommerce_website/core/widget/layout/header/headers.dart';
 import 'package:ecommerce_website/feature/home/presentation/widgets/fotter_section.dart';
-import 'package:ecommerce_website/feature/home/presentation/widgets/headers.dart';
 import 'package:flutter/material.dart';
 
 class MobileLayout extends StatefulWidget {
@@ -36,6 +37,7 @@ class _MobileLayoutState extends State<MobileLayout> {
                   padding: const EdgeInsets.symmetric(horizontal: 24),
                   child: FotterSection(),
                 ),
+                const SizedBox(height: AppSize.spaceBtwSections),
               ],
             ),
           ),

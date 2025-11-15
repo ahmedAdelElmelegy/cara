@@ -22,8 +22,12 @@ class ProductGridView extends StatelessWidget {
                 ? 3
                 : 2
           : 4,
-      crossAxisSpacing: AppSize.spaceBtwSections,
-      mainAxisSpacing: AppSize.spaceBtwSections,
+      crossAxisSpacing: DeviceUtility.isDesktopScreen(context)
+          ? AppSize.spaceBtwItems
+          : AppSize.sm,
+      mainAxisSpacing: DeviceUtility.isDesktopScreen(context)
+          ? AppSize.spaceBtwItems
+          : AppSize.sm,
     );
   }
 }

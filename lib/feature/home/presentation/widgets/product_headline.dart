@@ -17,9 +17,10 @@ class ProductHeadline extends StatelessWidget {
       children: [
         Text(
           title,
-          style: Theme.of(
-            context,
-          ).textTheme.headlineMedium!.copyWith(fontSize: 50),
+          style: Theme.of(context).textTheme.headlineMedium!.copyWith(
+            fontSize: 50,
+            color: ColorManager.black,
+          ),
         ),
         SizedBox(height: AppSize.spaceBtwItems),
         Text(

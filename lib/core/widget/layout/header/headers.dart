@@ -2,7 +2,7 @@ import 'package:ecommerce_website/core/utils/constants/app_image.dart';
 import 'package:ecommerce_website/core/utils/constants/app_size.dart';
 import 'package:ecommerce_website/core/utils/constants/colors.dart';
 import 'package:ecommerce_website/core/utils/device/device_utility.dart';
-import 'package:ecommerce_website/feature/home/presentation/widgets/nav_bar_item.dart';
+import 'package:ecommerce_website/core/widget/layout/header/nav_bar_item.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
