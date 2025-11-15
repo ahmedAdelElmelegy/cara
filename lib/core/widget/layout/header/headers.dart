@@ -122,9 +122,6 @@ class _HeaderState extends State<Header> {
                       child: NavBarItem(
                         title: navBarItems[index],
                         onTap: () {
-                          // setState(() {
-                          //   currentIndex = index;
-                          // });
                           _router.go(routes[index]);
                         },
                         isActive: index == currentIndex,
