@@ -52,11 +52,14 @@ class _BannerSectionState extends State<BannerSection> {
                   fontSize: 46,
                 ),
               ),
-              Text(
-                '- All t-Shirts & Accessories',
-                style: Theme.of(context).textTheme.headlineLarge!.copyWith(
-                  color: Colors.white,
-                  fontSize: 46,
+              Flexible(
+                child: Text(
+                  '- All t-Shirts & Accessories',
+                  style: Theme.of(context).textTheme.headlineLarge!.copyWith(
+                    color: Colors.white,
+                    fontSize: 46,
+                  ),
+                  overflow: TextOverflow.ellipsis,
                 ),
               ),
             ],

@@ -1,6 +1,7 @@
 import 'package:ecommerce_website/core/utils/constants/app_image.dart';
 import 'package:ecommerce_website/core/utils/constants/app_size.dart';
 import 'package:ecommerce_website/core/utils/constants/colors.dart';
+import 'package:ecommerce_website/core/utils/device/device_utility.dart';
 import 'package:flutter/material.dart';
 
 class HeroWidget extends StatelessWidget {
@@ -18,7 +19,9 @@ class HeroWidget extends StatelessWidget {
         color: ColorManager.lightContainer,
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 80),
+        padding: EdgeInsets.symmetric(
+          horizontal: !DeviceUtility.isDesktopScreen(context) ? 24 : 80,
+        ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [

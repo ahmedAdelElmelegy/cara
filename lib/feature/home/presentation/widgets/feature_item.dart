@@ -21,18 +21,13 @@ class _FeatureItemState extends State<FeatureItem> {
   bool isHovered = false;
   @override
   Widget build(BuildContext context) {
-    return MouseRegion(
-      cursor: SystemMouseCursors.click,
-      onEnter: (event) {
+    return InkWell(
+      onHover: (value) {
         setState(() {
-          isHovered = true;
+          isHovered = value;
         });
       },
-      onExit: (event) {
-        setState(() {
-          isHovered = false;
-        });
-      },
+      onTap: () {},
       child: Container(
         padding: EdgeInsets.symmetric(
           horizontal: AppSize.defaultSpace,

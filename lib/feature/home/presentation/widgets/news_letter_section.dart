@@ -30,8 +30,12 @@ class NewsLetterSection extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 80),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          child: Wrap(
+            runSpacing: AppSize.spaceBtwItems,
+            crossAxisAlignment: WrapCrossAlignment.center,
+            spacing: 700,
+            direction: Axis.horizontal,
+            alignment: WrapAlignment.spaceBetween,
             children: [
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -43,28 +47,37 @@ class NewsLetterSection extends StatelessWidget {
                       color: Colors.white,
                       fontSize: 35,
                     ),
+                    overflow: TextOverflow.ellipsis,
                   ),
                   SizedBox(height: AppSize.sm),
                   Row(
+                    mainAxisSize: MainAxisSize.min,
                     children: [
-                      Text(
-                        'Get E-mail updates about our latest shop and ',
-                        style: Theme.of(context).textTheme.headlineMedium
-                            ?.copyWith(color: ColorManager.grey),
+                      Flexible(
+                        child: Text(
+                          'Get E-mail updates about our latest shop and ',
+                          style: Theme.of(context).textTheme.headlineMedium
+                              ?.copyWith(color: ColorManager.grey),
+                          overflow: TextOverflow.ellipsis,
+                        ),
                       ),
-                      Text(
-                        'special offers.',
-                        style: Theme.of(context).textTheme.headlineMedium
-                            ?.copyWith(color: Colors.amber),
+                      Flexible(
+                        child: Text(
+                          'special offers.',
+                          style: Theme.of(context).textTheme.headlineMedium
+                              ?.copyWith(color: Colors.amber),
+                          overflow: TextOverflow.ellipsis,
+                        ),
                       ),
                     ],
                   ),
                 ],
               ),
               Row(
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   SizedBox(
-                    width: 300,
+                    width: 200,
                     child: TextFormField(
                       decoration: InputDecoration(
                         enabledBorder: OutlineInputBorder(

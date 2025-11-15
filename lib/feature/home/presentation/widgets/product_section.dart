@@ -1,3 +1,4 @@
+import 'package:ecommerce_website/core/utils/device/device_utility.dart';
 import 'package:ecommerce_website/feature/home/presentation/widgets/product_grid_view.dart';
 import 'package:ecommerce_website/feature/home/presentation/widgets/product_headline.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +16,9 @@ class ProductSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 80),
+      padding: EdgeInsets.symmetric(
+        horizontal: !DeviceUtility.isDesktopScreen(context) ? 24 : 80,
+      ),
       child: Column(
         children: [
           ProductHeadline(title: title, subtitle: subtitle),
