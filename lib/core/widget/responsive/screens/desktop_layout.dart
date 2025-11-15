@@ -20,7 +20,15 @@ class DesktopLayout extends StatelessWidget {
           SliverToBoxAdapter(
             child: Column(
               children: [
-                body ?? SizedBox.shrink(),
+                AnimatedSwitcher(
+                  duration: const Duration(milliseconds: 300),
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(
+                      minHeight: MediaQuery.of(context).size.height,
+                    ),
+                    child: body,
+                  ),
+                ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 80),
                   child: FotterSection(),

@@ -1,7 +1,7 @@
+import 'package:ecommerce_website/core/router/app_routes.dart';
 import 'package:ecommerce_website/core/theme/theme.dart';
 import 'package:ecommerce_website/core/utils/constants/app_text.dart';
 import 'package:ecommerce_website/core/utils/device/web_material_scroll.dart';
-import 'package:ecommerce_website/feature/home/presentation/pages/home.dart';
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
@@ -9,7 +9,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: router,
       debugShowCheckedModeBanner: false,
 
       title: AppText.appName,
@@ -18,7 +19,6 @@ class MyApp extends StatelessWidget {
 
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.system,
-      home: HomeScreen(),
     );
   }
 }

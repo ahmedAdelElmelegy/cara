@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/foundation.dart';
+import 'package:go_router/go_router.dart';
 
 import '../constants/app_size.dart';
 
@@ -122,5 +123,10 @@ class DeviceUtility {
 
   static bool isMobileScreen(BuildContext context) {
     return MediaQuery.of(context).size.width < AppSize.tabletScreenSize;
+  }
+
+  // id current routes
+  static String getCurrentRoute(BuildContext context) {
+    return GoRouter.of(context).state.uri.query;
   }
 }

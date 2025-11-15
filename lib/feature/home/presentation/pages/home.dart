@@ -12,8 +12,8 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: AppSiteTemplate(
-        mobile: MobileLayoutScreen(),
-        tablet: TabletLayoutScreen(),
+        mobile: HomeMobileScreen(),
+        tablet: HomeTabletScreen(),
         desktop: HomeDesktopScreen(),
       ),
     );

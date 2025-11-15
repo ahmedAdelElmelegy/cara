@@ -6,8 +6,8 @@ import 'package:ecommerce_website/feature/home/presentation/widgets/news_letter_
 import 'package:ecommerce_website/feature/home/presentation/widgets/product_section.dart';
 import 'package:flutter/material.dart';
 
-class MobileLayoutScreen extends StatelessWidget {
-  const MobileLayoutScreen({super.key});
+class HomeMobileScreen extends StatelessWidget {
+  const HomeMobileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

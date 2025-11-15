@@ -32,7 +32,15 @@ class _TabletLayoutState extends State<TabletLayout> {
           SliverToBoxAdapter(
             child: Column(
               children: [
-                widget.body ?? SizedBox.shrink(),
+                AnimatedSwitcher(
+                  duration: const Duration(milliseconds: 300),
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(
+                      minHeight: MediaQuery.of(context).size.height,
+                    ),
+                    child: widget.body,
+                  ),
+                ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 24),
                   child: FotterSection(),

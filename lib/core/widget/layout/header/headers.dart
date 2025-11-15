@@ -1,18 +1,85 @@
+import 'package:ecommerce_website/core/router/routes.dart';
 import 'package:ecommerce_website/core/utils/constants/app_image.dart';
 import 'package:ecommerce_website/core/utils/constants/app_size.dart';
 import 'package:ecommerce_website/core/utils/constants/colors.dart';
 import 'package:ecommerce_website/core/utils/device/device_utility.dart';
 import 'package:ecommerce_website/core/widget/layout/header/nav_bar_item.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
-class Header extends StatelessWidget {
+class Header extends StatefulWidget {
   final GlobalKey<ScaffoldState>? scaffoldKey;
   const Header({super.key, this.scaffoldKey});
 
   @override
+  State<Header> createState() => _HeaderState();
+}
+
+class _HeaderState extends State<Header> {
+  int currentIndex = 0;
+  late GoRouter _router;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _router = GoRouter.of(context);
+      _router.routerDelegate.addListener(_onRouteChanged);
+      _onRouteChanged();
+      // change in the first time
+    });
+  }
+
+  void _onRouteChanged() {
+    final uri = _router.state.uri;
+    final segments = uri.pathSegments;
+
+    if (segments.isEmpty) return;
+
+    final first = segments.first;
+    debugPrint(first);
+
+    setState(() {
+      switch (first) {
+        case Routes.home:
+          currentIndex = 0;
+          break;
+        case Routes.shop:
+          currentIndex = 1;
+          break;
+        case Routes.blog:
+          currentIndex = 2;
+          break;
+        case Routes.about:
+          currentIndex = 3;
+          break;
+        case Routes.contact:
+          currentIndex = 4;
+          break;
+        default:
+          currentIndex = 0;
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    _router.routerDelegate.removeListener(_onRouteChanged);
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     List<String> navBarItems = ['Home', 'Shop', 'Blog', 'About', 'Contact'];
+
+    List<String> routes = [
+      Routes.home,
+      Routes.shop,
+      Routes.blog,
+      Routes.about,
+      Routes.contact,
+    ];
 
     return Container(
       padding: EdgeInsets.symmetric(
@@ -38,7 +105,7 @@ class Header extends StatelessWidget {
             IconButton(
               icon: const Icon(Iconsax.menu),
               onPressed: () {
-                scaffoldKey?.currentState?.openDrawer();
+                widget.scaffoldKey?.currentState?.openDrawer();
               },
             ),
           const SizedBox(width: 10),
@@ -54,7 +121,13 @@ class Header extends StatelessWidget {
                       ),
                       child: NavBarItem(
                         title: navBarItems[index],
-                        onTap: () {},
+                        onTap: () {
+                          setState(() {
+                            currentIndex = index;
+                          });
+                          _router.go(routes[index]);
+                        },
+                        isActive: index == currentIndex,
                       ),
                     ),
                   ),

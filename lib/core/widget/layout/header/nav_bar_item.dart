@@ -41,7 +41,7 @@ class NavBarItemState extends State<NavBarItem> {
         child: Text(
           widget.title,
           style: Theme.of(context).textTheme.headlineMedium!.copyWith(
-            color: isHovering
+            color: isHovering || widget.isActive
                 ? ColorManager.primary
                 : ColorManager.textSecondary,
           ),
