@@ -20,7 +20,7 @@ class ProductGridView extends StatelessWidget {
       crossAxisCount: !DeviceUtility.isDesktopScreen(context)
           ? DeviceUtility.isTabletScreen(context)
                 ? 3
-                : 2
+                : 1
           : 4,
       crossAxisSpacing: DeviceUtility.isDesktopScreen(context)
           ? AppSize.spaceBtwItems

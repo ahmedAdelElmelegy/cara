@@ -33,7 +33,7 @@ class NewsLetterSection extends StatelessWidget {
           child: Wrap(
             runSpacing: AppSize.spaceBtwItems,
             crossAxisAlignment: WrapCrossAlignment.center,
-            spacing: 700,
+            spacing: 920,
             direction: Axis.horizontal,
             alignment: WrapAlignment.spaceBetween,
             children: [
