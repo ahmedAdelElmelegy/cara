@@ -111,12 +111,15 @@ class _CartTableState extends State<CartTable> {
   Widget build(BuildContext context) {
     return SfDataGrid(
       rowHeight: 100,
-
-      gridLinesVisibility: GridLinesVisibility.none,
+      isScrollbarAlwaysShown: true,
+      gridLinesVisibility: GridLinesVisibility.both,
       defaultColumnWidth: 120,
       rowsPerPage: 10,
-
+      allowSorting: true,
+      headerGridLinesVisibility: GridLinesVisibility.both,
       columnWidthMode: ColumnWidthMode.fill,
+      frozenColumnsCount: 0,
+      headerRowHeight: 55,
       source: employeeDataSource,
       columns: <GridColumn>[
         GridColumn(

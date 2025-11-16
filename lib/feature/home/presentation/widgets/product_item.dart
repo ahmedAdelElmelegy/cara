@@ -1,6 +1,8 @@
+import 'package:ecommerce_website/core/router/routes.dart';
 import 'package:ecommerce_website/core/utils/constants/app_size.dart';
 import 'package:ecommerce_website/core/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
 class ProductItem extends StatefulWidget {
@@ -15,17 +17,14 @@ class _ProductItemState extends State<ProductItem> {
   bool isHovered = false;
   @override
   Widget build(BuildContext context) {
-    return MouseRegion(
-      cursor: SystemMouseCursors.click,
-      onEnter: (value) {
+    return InkWell(
+      onHover: (value) {
         setState(() {
-          isHovered = true;
+          isHovered = value;
         });
       },
-      onExit: (value) {
-        setState(() {
-          isHovered = false;
-        });
+      onTap: () {
+        context.go('${Routes.shop}/${Routes.productDetails}');
       },
       child: Container(
         padding: const EdgeInsets.symmetric(

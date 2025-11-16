@@ -5,4 +5,5 @@ class Routes {
   static const String shop = "/shop";
   static const String blog = "/blog";
   static const String cart = "/cart";
+  static const String productDetails = "product-details";
 }
