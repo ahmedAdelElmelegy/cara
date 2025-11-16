@@ -101,12 +101,15 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                     padding: EdgeInsets.only(
                       top: index == 0 ? 0 : AppSize.defaultSpace,
                     ),
-                    child: NavBarItem(
-                      title: navBarItems[index],
-                      onTap: () {
-                        _router.go(routes[index]);
-                      },
-                      isActive: index == currentIndex,
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: NavBarItem(
+                        title: navBarItems[index],
+                        onTap: () {
+                          _router.go(routes[index]);
+                        },
+                        isActive: index == currentIndex,
+                      ),
                     ),
                   ),
                 ),

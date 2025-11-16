@@ -71,7 +71,9 @@ class _ProductItemState extends State<ProductItem> {
             SizedBox(height: AppSize.spaceBtwItems / 2),
             Text(
               "Cartoon Astronaut T-Shirts",
-              style: Theme.of(context).textTheme.headlineLarge!,
+              style: Theme.of(
+                context,
+              ).textTheme.headlineLarge!.copyWith(color: ColorManager.dark),
             ),
             SizedBox(height: AppSize.spaceBtwItems / 2),
             Row(

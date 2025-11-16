@@ -35,7 +35,12 @@ class BlogImageSection extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(title, style: Theme.of(context).textTheme.headlineLarge!),
+              Text(
+                title,
+                style: Theme.of(
+                  context,
+                ).textTheme.headlineLarge!.copyWith(color: ColorManager.dark),
+              ),
               SizedBox(height: AppSize.spaceBtwItems),
               Text(
                 'Kickstarter man  braid godard coloring book.\n Racette waistcoat selhes yr walf chartreuse hexagon irony/n godard...',
