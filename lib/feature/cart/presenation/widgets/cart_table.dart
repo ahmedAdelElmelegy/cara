@@ -253,12 +253,29 @@ class EmployeeDataSource extends DataGridSource {
           child: dataGridCell.columnName == 'image'
               ? Image.asset(
                   dataGridCell.value,
-                  width: 40,
+                  width: 70,
                   height: 70,
                   fit: BoxFit.fill,
                 )
               : dataGridCell.columnName == 'remove'
               ? Icon(Iconsax.close_circle_copy)
+              : dataGridCell.columnName == 'quantity'
+              ? SizedBox(
+                  width: 100,
+                  child: DropdownButtonFormField(
+                    items: [1, 2, 3, 4, 5]
+                        .map(
+                          (e) => DropdownMenuItem(
+                            value: e,
+                            child: Text(e.toString()),
+                          ),
+                        )
+                        .toList(),
+                    onChanged: (value) {},
+                    initialValue: 1,
+                    // hint: Text('1'),
+                  ),
+                )
               : Text(
                   dataGridCell.value.toString(),
                   style: TextStyle(
