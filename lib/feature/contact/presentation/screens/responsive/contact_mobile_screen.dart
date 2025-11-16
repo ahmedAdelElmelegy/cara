@@ -1,3 +1,8 @@
+import 'package:ecommerce_website/core/utils/constants/app_image.dart';
+import 'package:ecommerce_website/core/utils/constants/app_size.dart';
+import 'package:ecommerce_website/core/widget/banner_container.dart';
+import 'package:ecommerce_website/feature/contact/presentation/widgets/contact_detail_section.dart';
+import 'package:ecommerce_website/feature/home/presentation/widgets/news_letter_section.dart';
 import 'package:flutter/material.dart';
 
 class ContactMobileScreen extends StatelessWidget {
@@ -5,6 +10,19 @@ class ContactMobileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text("Contact Mobile");
+    return Column(
+      children: [
+        BannerContainer(
+          image: AppImage.banner,
+          title: '#Let\'s_talk',
+          subtitle: 'LEAVE A MESSAGE,WE love to hear from you !',
+        ),
+        SizedBox(height: AppSize.spaceBtwSections * 3),
+        NewsLetterSection(),
+        SizedBox(height: AppSize.spaceBtwSections * 3),
+        ContactDetailsSection(),
+        SizedBox(height: AppSize.spaceBtwSections * 3),
+      ],
+    );
   }
 }

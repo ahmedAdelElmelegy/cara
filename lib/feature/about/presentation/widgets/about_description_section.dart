@@ -21,9 +21,10 @@ class AboutDescriptionSection extends StatelessWidget {
             width: 700,
             height: 500,
             decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(AppSize.cardRadiusLg),
               image: DecorationImage(
                 image: AssetImage(AppImage.about6),
-                fit: BoxFit.cover,
+                fit: BoxFit.fill,
               ),
             ),
           ),
