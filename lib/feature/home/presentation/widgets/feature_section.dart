@@ -9,22 +9,31 @@ class FeatureSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Wrap(
-      crossAxisAlignment: WrapCrossAlignment.start,
-      alignment: WrapAlignment.start,
-      runSpacing: DeviceUtility.isDesktopScreen(context)
-          ? AppSize.spaceBtwSections
-          : AppSize.spaceBtwItems,
-      children: List.generate(
-        AppConstants.featureItems.length,
-        (index) => Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: AppSize.spaceBtwItems,
-          ),
-          child: FeatureItem(
-            image: AppConstants.featureItems[index].image,
-            title: AppConstants.featureItems[index].title,
-            color: AppConstants.featureItems[index].color,
+    return Padding(
+      padding: EdgeInsets.symmetric(
+        horizontal: DeviceUtility.isDesktopScreen(context) ? 80 : AppSize.lg,
+      ),
+      child: Align(
+        alignment: DeviceUtility.isDesktopScreen(context)
+            ? Alignment.centerLeft
+            : Alignment.center,
+        child: Wrap(
+          crossAxisAlignment: WrapCrossAlignment.start,
+          alignment: WrapAlignment.start,
+          runSpacing: DeviceUtility.isDesktopScreen(context)
+              ? AppSize.spaceBtwSections
+              : AppSize.spaceBtwItems,
+          spacing: DeviceUtility.isDesktopScreen(context)
+              ? AppSize.spaceBtwItems
+              : AppSize.sm,
+
+          children: List.generate(
+            AppConstants.featureItems.length,
+            (index) => FeatureItem(
+              image: AppConstants.featureItems[index].image,
+              title: AppConstants.featureItems[index].title,
+              color: AppConstants.featureItems[index].color,
+            ),
           ),
         ),
       ),
