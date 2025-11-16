@@ -4,4 +4,5 @@ class Routes {
   static const String contact = "/contact";
   static const String shop = "/shop";
   static const String blog = "/blog";
+  static const String cart = "/cart";
 }

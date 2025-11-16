@@ -1,7 +1,5 @@
 import 'package:ecommerce_website/core/widget/layout/template/side_template.dart';
 import 'package:ecommerce_website/feature/contact/presentation/screens/responsive/contact_desktop_screen.dart';
-import 'package:ecommerce_website/feature/contact/presentation/screens/responsive/contact_mobile_screen.dart';
-import 'package:ecommerce_website/feature/contact/presentation/screens/responsive/contact_tablet_screen.dart';
 import 'package:flutter/material.dart';
 
 class ContactScreen extends StatelessWidget {
@@ -10,8 +8,8 @@ class ContactScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppSiteTemplate(
-      mobile: const ContactMobileScreen(),
-      tablet: const ContactTabletScreen(),
+      // mobile: const ContactMobileScreen(),
+      // tablet: const ContactTabletScreen(),
       desktop: const ContactDesktopScreen(),
     );
   }

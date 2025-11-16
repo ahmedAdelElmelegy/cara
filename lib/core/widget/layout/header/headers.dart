@@ -57,6 +57,9 @@ class _HeaderState extends State<Header> {
         case 'contact':
           currentIndex = 4;
           break;
+        case 'cart':
+          currentIndex = 5;
+          break;
         default:
           currentIndex = 0;
       }
@@ -103,7 +106,7 @@ class _HeaderState extends State<Header> {
             Image.asset(AppImage.logo),
           if (!DeviceUtility.isDesktopScreen(context))
             IconButton(
-              icon: const Icon(Iconsax.menu),
+              icon: const Icon(Iconsax.menu, color: Colors.black),
               onPressed: () {
                 widget.scaffoldKey?.currentState?.openDrawer();
               },
@@ -121,6 +124,7 @@ class _HeaderState extends State<Header> {
                       ),
                       child: NavBarItem(
                         title: navBarItems[index],
+                        index: index,
                         onTap: () {
                           if (GoRouter.of(context).state.uri.path !=
                               routes[index]) {
@@ -133,7 +137,31 @@ class _HeaderState extends State<Header> {
                   ),
                 ),
               const SizedBox(width: AppSize.spaceBtwSections * 2),
-              Icon(Iconsax.shopping_cart_copy),
+              InkWell(
+                onTap: () {
+                  _router.go(Routes.cart);
+                },
+                child: AnimatedContainer(
+                  duration: const Duration(milliseconds: 300),
+                  padding: const EdgeInsets.symmetric(vertical: 4),
+                  decoration: BoxDecoration(
+                    border: Border(
+                      bottom: BorderSide(
+                        color: currentIndex == 5
+                            ? ColorManager.primary
+                            : Colors.transparent,
+                        width: 2,
+                      ),
+                    ),
+                  ),
+                  child: Icon(
+                    Iconsax.shopping_cart_copy,
+                    color: currentIndex == 5
+                        ? ColorManager.primary
+                        : ColorManager.textSecondary,
+                  ),
+                ),
+              ),
             ],
           ),
         ],

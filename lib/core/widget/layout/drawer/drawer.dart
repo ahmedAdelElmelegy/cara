@@ -54,6 +54,9 @@ class _DrawerWidgetState extends State<DrawerWidget> {
         case 'contact':
           currentIndex = 4;
           break;
+        case 'cart':
+          currentIndex = 5;
+          break;
         default:
           currentIndex = 0;
       }
@@ -76,6 +79,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
       Routes.blog,
       Routes.about,
       Routes.contact,
+      Routes.cart,
     ];
 
     return Drawer(
@@ -105,6 +109,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                       alignment: Alignment.centerLeft,
                       child: NavBarItem(
                         title: navBarItems[index],
+                        index: index,
                         onTap: () {
                           _router.go(routes[index]);
                         },

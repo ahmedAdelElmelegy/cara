@@ -1,13 +1,16 @@
 import 'package:ecommerce_website/core/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:iconsax_flutter/iconsax_flutter.dart';
 
 class NavBarItem extends StatefulWidget {
   final String title;
+  final int index;
   final VoidCallback onTap;
   final bool isActive;
 
   const NavBarItem({
     required this.title,
+    required this.index,
     required this.onTap,
     this.isActive = false,
     super.key,
