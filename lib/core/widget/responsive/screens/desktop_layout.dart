@@ -3,19 +3,27 @@ import 'package:ecommerce_website/core/widget/layout/header/headers.dart';
 import 'package:ecommerce_website/feature/home/presentation/widgets/fotter_section.dart';
 import 'package:flutter/material.dart';
 
-class DesktopLayout extends StatelessWidget {
+class DesktopLayout extends StatefulWidget {
   const DesktopLayout({super.key, this.body});
   final Widget? body;
+
+  @override
+  State<DesktopLayout> createState() => _DesktopLayoutState();
+}
+
+class _DesktopLayoutState extends State<DesktopLayout> {
+  final ScrollController _controller = ScrollController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: CustomScrollView(
+        controller: _controller,
         slivers: [
           SliverAppBar(
             pinned: true,
             collapsedHeight: 80,
-            flexibleSpace: Header(),
+            flexibleSpace: Header(controller: _controller),
           ),
           SliverToBoxAdapter(
             child: Column(
@@ -24,31 +32,14 @@ class DesktopLayout extends StatelessWidget {
                   duration: const Duration(milliseconds: 200),
                   switchInCurve: Curves.easeOut,
                   switchOutCurve: Curves.easeIn,
-                  transitionBuilder: (child, animation) {
-                    return FadeTransition(
-                      opacity: animation,
-                      child: SlideTransition(
-                        position:
-                            Tween<Offset>(
-                              begin: const Offset(0.1, 0),
-                              end: Offset.zero,
-                            ).animate(
-                              CurvedAnimation(
-                                parent: animation,
-                                curve: Curves.easeOut,
-                              ),
-                            ),
-                        child: child,
-                      ),
-                    );
-                  },
+
                   child: KeyedSubtree(
-                    key: ValueKey(body?.key ?? 'body'),
+                    key: ValueKey(widget.body?.key ?? 'body'),
                     child: ConstrainedBox(
                       constraints: BoxConstraints(
                         minHeight: MediaQuery.of(context).size.height,
                       ),
-                      child: body ?? const SizedBox.shrink(),
+                      child: widget.body ?? const SizedBox.shrink(),
                     ),
                   ),
                 ),

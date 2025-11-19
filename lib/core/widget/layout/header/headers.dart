@@ -10,8 +10,8 @@ import 'package:iconsax_flutter/iconsax_flutter.dart';
 
 class Header extends StatefulWidget {
   final GlobalKey<ScaffoldState>? scaffoldKey;
-  const Header({super.key, this.scaffoldKey});
-
+  const Header({super.key, this.scaffoldKey, this.controller});
+  final ScrollController? controller;
   @override
   State<Header> createState() => _HeaderState();
 }
@@ -126,6 +126,13 @@ class _HeaderState extends State<Header> {
                         title: navBarItems[index],
                         index: index,
                         onTap: () {
+                          if (widget.controller?.hasClients ?? false) {
+                            widget.controller?.animateTo(
+                              0,
+                              duration: const Duration(milliseconds: 500),
+                              curve: Curves.easeInOutCubic,
+                            );
+                          }
                           if (GoRouter.of(context).state.uri.path !=
                               routes[index]) {
                             _router.go(routes[index]);

@@ -5,9 +5,8 @@ import 'package:ecommerce_website/feature/cart/presenation/screens/responsive/ca
 import 'package:ecommerce_website/feature/contact/presentation/screens/responsive/contact_desktop_screen.dart';
 import 'package:ecommerce_website/feature/main/main_screen.dart';
 import 'package:ecommerce_website/feature/home/presentation/pages/responsive/home_desktop_screen.dart';
-import 'package:ecommerce_website/feature/product_details/presenation/screens/product_detail.dart';
+import 'package:ecommerce_website/feature/product_details/presenation/screens/responsive/product_detail_desktop_screen.dart';
 import 'package:ecommerce_website/feature/shop/presentation/screens/responsive/shop_desktop_screen.dart';
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 final router = GoRouter(
@@ -18,12 +17,6 @@ final router = GoRouter(
         GoRoute(
           path: Routes.home,
           pageBuilder: (context, state) => NoTransitionPage(
-            // transitionDuration: const Duration(milliseconds: 300),
-            // reverseTransitionDuration: const Duration(milliseconds: 250),
-            // transitionsBuilder:
-            //     (context, animation, secondaryAnimation, child) {
-            //       return FadeTransition(opacity: animation, child: child);
-            //     },
             key: state.pageKey,
             child: const HomeDesktopScreen(),
           ),
@@ -31,12 +24,6 @@ final router = GoRouter(
         GoRoute(
           path: Routes.about,
           pageBuilder: (context, state) => NoTransitionPage(
-            // transitionDuration: const Duration(milliseconds: 300),
-            // reverseTransitionDuration: const Duration(milliseconds: 250),
-            // transitionsBuilder:
-            //     (context, animation, secondaryAnimation, child) {
-            //       return FadeTransition(opacity: animation, child: child);
-            //     },
             key: state.pageKey,
             child: const AboutDesktopScreen(),
           ),
@@ -44,12 +31,6 @@ final router = GoRouter(
         GoRoute(
           path: Routes.contact,
           pageBuilder: (context, state) => NoTransitionPage(
-            // transitionDuration: const Duration(milliseconds: 300),
-            // reverseTransitionDuration: const Duration(milliseconds: 250),
-            // transitionsBuilder:
-            //     (context, animation, secondaryAnimation, child) {
-            //       return FadeTransition(opacity: animation, child: child);
-            //     },
             key: state.pageKey,
             child: const ContactDesktopScreen(),
           ),
@@ -57,12 +38,6 @@ final router = GoRouter(
         GoRoute(
           path: Routes.shop,
           pageBuilder: (context, state) => NoTransitionPage(
-            // transitionDuration: const Duration(milliseconds: 300),
-            // reverseTransitionDuration: const Duration(milliseconds: 250),
-            // transitionsBuilder:
-            //     (context, animation, secondaryAnimation, child) {
-            //       return FadeTransition(opacity: animation, child: child);
-            //     },
             key: state.pageKey,
             child: const ShopDesktopScreen(),
           ),
@@ -70,14 +45,8 @@ final router = GoRouter(
             GoRoute(
               path: 'product-details',
               pageBuilder: (context, state) => NoTransitionPage(
-                // transitionDuration: const Duration(milliseconds: 300),
-                // reverseTransitionDuration: const Duration(milliseconds: 250),
-                // transitionsBuilder:
-                //     (context, animation, secondaryAnimation, child) {
-                //       return FadeTransition(opacity: animation, child: child);
-                //     },
                 key: state.pageKey,
-                child: const ProductDetailScreen(),
+                child: const ProductDetailDesktopScreen(),
               ),
             ),
           ],
