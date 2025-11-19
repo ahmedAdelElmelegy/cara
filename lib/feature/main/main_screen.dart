@@ -1,10 +1,11 @@
 import 'package:ecommerce_website/core/widget/layout/template/side_template.dart';
-import 'package:ecommerce_website/feature/home/presentation/pages/responsive/home_desktop_screen.dart';
 
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class MainScreen extends StatelessWidget {
+  final Widget child;
+
+  const MainScreen({super.key, required this.child});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +13,7 @@ class HomeScreen extends StatelessWidget {
       body: AppSiteTemplate(
         // mobile: HomeMobileScreen(),
         // tablet: HomeTabletScreen(),
-        desktop: HomeDesktopScreen(),
+        desktop: child,
       ),
     );
   }
