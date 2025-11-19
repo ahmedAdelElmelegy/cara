@@ -19,7 +19,7 @@ class HomeDesktopScreen extends StatelessWidget {
         FeatureSection(),
         SizedBox(height: AppSize.spaceBtwSections * 2),
 
-        // products
+        // productsa
         ProductSection(
           title: "Feature Products",
           subtitle: "Summer Collection New Modern Design",
