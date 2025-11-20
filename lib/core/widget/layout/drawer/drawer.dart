@@ -7,7 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class DrawerWidget extends StatefulWidget {
-  const DrawerWidget({super.key});
+  final ScrollController? controller;
+  const DrawerWidget({super.key, this.controller});
 
   @override
   State<DrawerWidget> createState() => _DrawerWidgetState();
@@ -111,7 +112,18 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                         title: navBarItems[index],
                         index: index,
                         onTap: () {
-                          _router.go(routes[index]);
+                          if (widget.controller?.hasClients ?? false) {
+                            widget.controller?.animateTo(
+                              0,
+                              duration: const Duration(milliseconds: 500),
+                              curve: Curves.easeInOutCubic,
+                            );
+                          }
+                          if (GoRouter.of(context).state.uri.path !=
+                              routes[index]) {
+                            _router.go(routes[index]);
+                            context.pop();
+                          }
                         },
                         isActive: index == currentIndex,
                       ),

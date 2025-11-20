@@ -146,6 +146,13 @@ class _HeaderState extends State<Header> {
               const SizedBox(width: AppSize.spaceBtwSections * 2),
               InkWell(
                 onTap: () {
+                  if (widget.controller?.hasClients ?? false) {
+                    widget.controller?.animateTo(
+                      0,
+                      duration: const Duration(milliseconds: 500),
+                      curve: Curves.easeInOutCubic,
+                    );
+                  }
                   _router.go(Routes.cart);
                 },
                 child: AnimatedContainer(

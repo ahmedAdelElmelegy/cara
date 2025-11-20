@@ -109,116 +109,124 @@ class _CartTableState extends State<CartTable> {
 
   @override
   Widget build(BuildContext context) {
-    return SfDataGrid(
-      rowHeight: 100,
-      isScrollbarAlwaysShown: true,
-      gridLinesVisibility: GridLinesVisibility.both,
-      defaultColumnWidth: 120,
-      rowsPerPage: 10,
-      allowSorting: true,
-      headerGridLinesVisibility: GridLinesVisibility.both,
-      columnWidthMode: ColumnWidthMode.fill,
-      frozenColumnsCount: 0,
-      headerRowHeight: 55,
-      source: employeeDataSource,
-      columns: <GridColumn>[
-        GridColumn(
-          columnName: 'remove',
-          label: Container(
-            padding: EdgeInsets.all(16.0),
-            alignment: Alignment.centerLeft,
-            child: Text(
-              'Remove',
-              style: TextStyle(
-                color: Colors.black,
-                fontFamily: 'Urbanist',
-                fontWeight: FontWeight.bold,
-                fontSize: 18,
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: SizedBox(
+        width: 1200,
+        child: SfDataGrid(
+          rowHeight: 100,
+          selectionMode: SelectionMode.singleDeselect,
+
+          isScrollbarAlwaysShown: true,
+          gridLinesVisibility: GridLinesVisibility.both,
+          defaultColumnWidth: 120,
+          rowsPerPage: 10,
+          allowSorting: true,
+          headerGridLinesVisibility: GridLinesVisibility.both,
+          columnWidthMode: ColumnWidthMode.fill,
+          frozenColumnsCount: 0,
+          headerRowHeight: 55,
+          source: employeeDataSource,
+          columns: <GridColumn>[
+            GridColumn(
+              columnName: 'remove',
+              label: Container(
+                padding: EdgeInsets.all(16.0),
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Remove',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontFamily: 'Urbanist',
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
               ),
             ),
-          ),
-        ),
-        GridColumn(
-          columnName: 'image',
-          label: Container(
-            padding: EdgeInsets.all(16.0),
-            alignment: Alignment.centerLeft,
-            child: Text(
-              'Image',
-              style: TextStyle(
-                color: Colors.black,
-                fontFamily: 'Urbanist',
-                fontWeight: FontWeight.bold,
-                fontSize: 18,
+            GridColumn(
+              columnName: 'image',
+              label: Container(
+                padding: EdgeInsets.all(16.0),
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Image',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontFamily: 'Urbanist',
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
               ),
             ),
-          ),
-        ),
-        GridColumn(
-          columnName: 'product',
-          label: Container(
-            padding: EdgeInsets.all(16.0),
-            alignment: Alignment.centerLeft,
-            child: Text(
-              'Product',
-              style: TextStyle(
-                color: Colors.black,
-                fontFamily: 'Urbanist',
-                fontWeight: FontWeight.bold,
-                fontSize: 18,
+            GridColumn(
+              columnName: 'product',
+              label: Container(
+                padding: EdgeInsets.all(16.0),
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Product',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontFamily: 'Urbanist',
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
               ),
             ),
-          ),
-        ),
-        GridColumn(
-          columnName: 'price',
-          label: Container(
-            padding: EdgeInsets.all(16.0),
-            alignment: Alignment.centerLeft,
-            child: Text(
-              'Price',
-              style: TextStyle(
-                color: Colors.black,
-                fontFamily: 'Urbanist',
-                fontWeight: FontWeight.bold,
-                fontSize: 18,
+            GridColumn(
+              columnName: 'price',
+              label: Container(
+                padding: EdgeInsets.all(16.0),
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Price',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontFamily: 'Urbanist',
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
               ),
             ),
-          ),
-        ),
-        GridColumn(
-          columnName: 'quantity',
-          label: Container(
-            padding: EdgeInsets.all(16.0),
-            alignment: Alignment.centerLeft,
-            child: Text(
-              'Quantity',
-              style: TextStyle(
-                color: Colors.black,
-                fontFamily: 'Urbanist',
-                fontWeight: FontWeight.bold,
-                fontSize: 18,
+            GridColumn(
+              columnName: 'quantity',
+              label: Container(
+                padding: EdgeInsets.all(16.0),
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Quantity',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontFamily: 'Urbanist',
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
               ),
             ),
-          ),
-        ),
-        GridColumn(
-          columnName: 'subtotal',
-          label: Container(
-            padding: EdgeInsets.all(16.0),
-            alignment: Alignment.centerLeft,
-            child: Text(
-              'Subtotal',
-              style: TextStyle(
-                color: Colors.black,
-                fontFamily: 'Urbanist',
-                fontWeight: FontWeight.bold,
-                fontSize: 18,
+            GridColumn(
+              columnName: 'subtotal',
+              label: Container(
+                padding: EdgeInsets.all(16.0),
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Subtotal',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontFamily: 'Urbanist',
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
               ),
             ),
-          ),
+          ],
         ),
-      ],
+      ),
     );
   }
 }

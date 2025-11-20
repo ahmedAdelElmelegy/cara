@@ -14,14 +14,16 @@ class MobileLayout extends StatefulWidget {
 
 class _MobileLayoutState extends State<MobileLayout> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  final ScrollController _controller = ScrollController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
       drawerEnableOpenDragGesture: false,
-      drawer: const DrawerWidget(),
+      drawer: DrawerWidget(controller: _controller),
 
       body: CustomScrollView(
+        controller: _controller,
         slivers: [
           SliverAppBar(
             automaticallyImplyLeading: false,
